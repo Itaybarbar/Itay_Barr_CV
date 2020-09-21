@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Itay Barr CV</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header id="myHeader" class="back">
+		<div>
+		<h1>ITAY LAVIE BARR - CV</h1>
+			<a href="http://www.linkedin.com/in/itay-barr-0505811a8" target="_blank"><img src="icons\linkedin_icon.png"></a>
+			<a href="https://www.facebook.com/itaybarbar/" target="_blank"><img src="icons\facebook_icon.png"></a>
+			<a href="MAILTO:itaybarbar@gmail.com" target="_blank"><img src="icons\gmail_icon.png"></a>
+			<a href="tel:+972526567472" target="_blank"><img id="phone" src="icons\phone_icon.png"></a>
+		</div>
+	</header>
+	<form id="contactInfo" class="back" action="#" onsubmit="return validate(this)">
+		<h2>CONTACT ME</h2>
+		<div id="contactFrame">
+			<input type="text" name="fullname" placeholder="Enter Your Name/Company Name" required>
+			<select>
+				<option value="Personal">Personal</option>
+				<option value="Business">Business</option>
+			</select>
+			<input type="email" name="email" placeholder="Enter eMail" required
+					pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-_]+\.[a-z]{2,}\.*[a-z]*">
+			<input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{8,12}"
+					title="digits only please, 8-12 characters">
+			<textarea name="message" placeholder="What's on your mind?" autofocus
+					title="at least 5 characters, please"></textarea>
+		</div>
+		<input type="reset" value="RESET"><input id="submit" type="submit" value="SUBMIT">
+	</form>
+	<article id="mainInfo" class="back">
+		<h2>SUMMERY</h2>
+		<ul id="summery">
+			<li>Management experience, team leadership & workflow </li>
+			<li>Autodidact, quick learner, a team player & Keen multitasker</li>
+			<li>Teaching and tutoring experience in many fields, in both English and Hebrew</li>
+			<li>Good computer & technical orientation. Intuitive with new software</li>
+		</ul>
+		<div id="info2">
+			<div>
+				<h2>Software</h2>
+				<ul>
+					<li>Office - well oriented</li>
+					<li>JS, React, Java, HTML5, CSS3</li>
+					<li>SQL, SQLserver</li>
+					<li>Photoshop</li>
+				</ul>
+			</div>
+			<div>
+				<h2>Languages</h2>
+				<ul>
+					<li>Hebrew - Native Speaker</li>
+					<li>English - Fluent, Native Speaking Level</li>
+				</ul>
+			</div>
+			<div>
+				<h2>Education</h2>
+				<ul>
+					<li>2019 Program Engineering – Handesaim Tel-Aviv (Expected Graduation - 10/2022)</li>
+					<li>2010-2012 Education Studies – Seminar Hakibuzim</li>
+					<li>Highschool Diploma</li>
+				</ul>
+			</div>
+		</div>
+		<table id="homeInfo">
+			<tr>
+				<th>Year</th>
+				<th>Position</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td>2019-2020</td>
+				<td>Web Developer – Student Position, ‘Homazze’, Beit-Shemesh </td>
+				<td>Building a site using React & SQLserver, according to Xd template</td>
+			</tr>
+			<tr>
+				<td>2016-2019</td>
+				<td>Manager & Chef - Morning Crew, ‘Nooch’, Ramat HaSharon</td>
+				<td>Training & managing staff, problem solving, workflow management, Stock ordering and review</td>
+			</tr>
+			<tr>
+				<td>2013-2015</td>
+				<td>Owner (partnership) & Manager - ‘Da Peppe’ Pizzeria, Tel-Aviv</td>
+				<td>Starting a business and all it entails, budget planning, training various staffs</td>
+			</tr>
+			<tr>
+				<td>2009-2012</td>
+				<td>Analyzer & Implementer – ‘Get It Digital’, Ramat-Gan - Israel, NY -USA, Manchester -UK</td>
+				<td>Package listing according to statistics & popularity, bulk listings, billing and some work with Google AdWords.</td>
+			</tr>
+			<tr>
+				<td>2010-2011</td>
+				<td>Youth Instructor - ‘Ta’asiyeda’, Tel-Aviv</td>
+				<td>Teaching children about Israeli industry & it’s affect on our daily lives</td>
+			</tr>
+		</table>
+		
+
+	</article>
+	<nav id="myNav" class="back">
+		<div id="homeBtn" onclick="infoSwitch1()">HOME</div>
+		<div id="linkBtn" onclick="popLink()">LINKS</div>
+		<div id="otherBtn" onclick="popOther()">OTHER STUFF</div>
+		<div id="contactBtn" onclick="infoSwitch2()">CONTACT ME</div>
+	</nav>
+	<footer id="myFooter" class="back">
+		<p>&#169 This site/CV was coded, designed & in some cases, mishmashed by and only by Itay L. Barr</p>
+	</footer>
+	<!--LINKS POPUP -->
+	<div id="linkPop">
+		<div class="closeBtn" onclick="closePop()">X CLOSE</div>
+		<div>
+			<a href="template\index.html" target="_blank">Second Template Site</a>
+			<p>Another example of a responsive site I made a while ago</p>
+		</div>
+		<div>
+			<a href="robot\index.html" target="_blank">Cute Robot</a>
+			<p>Hover mouse over the robot to make his head swell, wave & dance</p>
+		</div>
+		<div>
+			<a href="landing\index.html" target="_blank">My First Landing Page</a>
+			<p>A first try of a landing page about a year ago. I still think it's pretty good</p>
+		</div>
+		<div>
+			<a href="sw\spriteWheels.html" target="_blank">A Mishmash Of Effects</a>
+			<p>some JS+CSS effects I set in a file for future use</p>
+		</div>
+	</div>
+	<!--OTHER POPUP -->
+	<div id="otherPop">
+		<div class="closeBtn" onclick="closePop()">X CLOSE</div>
+ 		<div id="leftBtn" onclick="leftClick()">&#8630</div>
+		<div id="rightBtn" onclick="rightClick()">&#8631</div>
+			<div id="videos">
+				<h2 id="clipText">Danny Carey - Best Drummer EVER</h2>
+				<a id="clipLink" href="https://www.youtube.com/watch?v=FssULNGSZIA" target="_blank">
+					<img id="clipPic" src="pics\danny-carey.jpg">
+				</a>
+			</div>
+	</div>
+</body>
+<script src="index.js"></script>
+<script src="database.js"></script>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style>
+	canvas{
+		display: block;
+		margin: auto;
+	}	
+
+
+
+	#wheel1, #wheel2, #wheel3 {
+		transition: all 50ms;
+		margin: 10px -18px;
+	}
+
+	#wheelCon {
+		margin-left: 15vw;
+	}
+</style>
+
+<body>
+	<canvas height="250px" width="250" id="myCanvas"></canvas>
+
+
+	<div id="wheelCon">
+		<img id="wheel1" src="wheel.png">
+		<img id="wheel2" src="wheel.png">
+		<img id="wheel3" src="wheel.png">
+	</div>
+</body>
+<script>
+	var	canvas = document.getElementById("myCanvas");
+	var context = canvas.getContext('2d');
+	var xSprite = 0, ySprite = 0, frameNumber = 0;
+	var framewidth = 1207/8, frameheight = 605/4;
+	var sprite = new Image();
+
+	sprite.src = 'sprite_boom.png';
+	sprite.onload = function(){
+		setInterval(draw, 240)
+	}
+
+	function draw(){
+		context.clearRect(0,0, canvas.width, canvas.height);
+
+		context.drawImage(sprite, xSprite, ySprite, framewidth, frameheight, 
+							100, 100, framewidth, frameheight);
+
+		frameNumber++;
+		if(frameNumber == 25) {frameNumber = 0}
+		xSprite = (frameNumber % 8) *framewidth;
+		ySprite = Math.floor(frameNumber / 4) *frameheight;
+	}
+
+	var obj1 = new Rotation();
+	var obj2 = new Rotation();
+	var obj3 = new Rotation();
+
+	obj1.animate("wheel1", "cw");
+	obj2.animate("wheel2", "ccw");
+	obj3.animate("wheel3", "cw");
+	
+	obj1.d=0;
+	obj2.d=16;
+	obj3.d=0;
+
+	function Rotation(){
+		this.animate = function(id, direction){
+			var elem = document.getElementById(id);
+			var me = this;
+			direction=="ccw"?this.d-=5:this.d+=5;
+			elem.style.transform = "rotate("+ this.d +"deg)";
+			setTimeout(function(){me.animate(id, direction);}, 50);
+		}
+	}
+
+</script>
+</html>
